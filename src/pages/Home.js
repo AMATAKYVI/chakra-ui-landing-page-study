@@ -11,7 +11,6 @@ import {
 function Home() {
   return (
     <chakra.div>
-      <Navbar />
       <HeroBanner />
       <Products />
       <Testimonials />

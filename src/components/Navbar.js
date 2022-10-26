@@ -1,17 +1,17 @@
 import React from 'react';
 import { Box, Button, chakra, Text, useColorMode } from '@chakra-ui/react';
-import { Image as logoImage } from '../data/dummyData';
-import { Image } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const navigate = useNavigate();
   return (
     <Box
       display="flex"
-      justifyContent="space-between"
+      justifyContent="space-evenly"
+      gap="40px"
       alignItems="center"
       sx={{
-        py: 2,
+        py: 6,
         px: {
           base: '12px',
           sm: '16px',
@@ -20,45 +20,33 @@ function Navbar() {
           xl: '28px',
           '2xl': '32px',
         },
-        bg: colorMode === 'dark' ? 'gray.200' : 'gray.50',
       }}
     >
-      <chakra.div>
-        {/* use image base on theme changing */}
-        <Image
-          src={
-            colorMode === 'dark' ? logoImage.logo.white : logoImage.logo.black
-          }
-          alt="Dan Abramov"
-          sx={{
-            boxSize: '50px',
-            borderRadius: '2xl',
-          }}
-        />
-      </chakra.div>
-      <chakra.div>
-        <chakra.div
-          sx={{
-            display: { base: 'none', sm: 'none', md: 'block' },
-            color: 'black',
+      <chakra.div display="flex" alignItems="center" gap="2">
+        <Text
+          fontSize="30px"
+          as="b"
+          letterSpacing="1px"
+          cursor="pointer"
+          onClick={() => {
+            navigate('/as');
           }}
         >
-          Welcome to CTX
-        </chakra.div>
+          DiNaMo
+        </Text>
       </chakra.div>
-      <chakra.div
-        sx={{
-          color: colorMode === 'dark' ? 'black' : 'white',
-        }}
-      >
+      <chakra.div></chakra.div>
+      <chakra.div>
         <Button
-          onClick={toggleColorMode}
           sx={{
-            bg: colorMode === 'dark' ? 'white' : 'gray.700',
-            _hover: { bg: colorMode === 'dark' ? 'white' : 'gray.700' },
+            bg: 'gray.700',
+            _hover: {
+              bg: 'gray.600',
+            },
+            color: 'white',
           }}
         >
-          Dark or Light
+          Github
         </Button>
       </chakra.div>
     </Box>
