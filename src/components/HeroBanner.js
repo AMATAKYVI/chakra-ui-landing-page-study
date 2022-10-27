@@ -11,8 +11,14 @@ import {
 import { Image as bannerImage } from '../data/dummyData';
 function HeroBanner() {
   return (
-    <chakra.div pt="100px" pb="20" backgroundImage="url('/images/kyuubi.png')">
+    <chakra.div
+      pt="100px"
+      pb="20"
+      backgroundImage="url('/images/kyuubi.png')"
+      borderBottom={`0.5px solid #CBD5E0`}
+    >
       <Flex px="350px" gap="30px">
+        {/* <chakra.div sx={{ p: 2, border: '5px solid ' }}> */}
         <Image
           src={bannerImage.banner.header}
           alt="banner"
@@ -23,6 +29,8 @@ function HeroBanner() {
           borderRadius="md"
           boxShadow="2xl"
         />
+        {/* </chakra.div> */}
+
         <Container
           sx={{
             px: 10,
@@ -41,9 +49,26 @@ function HeroBanner() {
             dolorem incidunt facere consectetur cupiditate ea itaque ut non sit
             debitis, recusandae velit modi et id commodi similique officiis! Ut
           </Text>
-          <Button w="50%" mt="2">
-            sad
-          </Button>
+          <chakra.div sx={{ display: 'flex', gap: 5, mt: 7 }}>
+            <Button
+              w="50%"
+              bg="blue.500"
+              color="gray.200"
+              textTransform="uppercase"
+              sx={{ _hover: { bg: 'blue.400' } }}
+            >
+              Test 123
+            </Button>
+            <Button
+              w="50%"
+              bg="blue.100"
+              color="blue.400"
+              textTransform="uppercase"
+              sx={{ _hover: { bg: 'blue.100' } }}
+            >
+              Test 123
+            </Button>
+          </chakra.div>
         </Container>
       </Flex>
     </chakra.div>

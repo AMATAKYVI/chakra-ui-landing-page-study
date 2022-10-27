@@ -9,4 +9,9 @@ export const Image = {
     header:
       'https://images.unsplash.com/photo-1578574577315-3fbeb0cecdc2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y29uc3VsdGFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
   },
+  product: {
+    one: '',
+    two: '',
+    three: '',
+  },
 };
